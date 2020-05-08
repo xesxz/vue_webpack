@@ -11,7 +11,14 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    overlay: true
+    overlay: true,
+    proxy: {
+      '/bk': {
+        target: 'http://104.168.144.140:4000',
+        changeOrigin: true,     // target是域名的话，需要这个参数，
+        secure: false,          // 设置支持https协议的代理
+      }
+    }
   },
   devtool: '#eval-source-map',
   resolve: {
@@ -20,7 +27,7 @@ module.exports = {
     }
   },
   plugins: [
-    // make sure to include the plugin for the magic
+
     new VueLoaderPlugin()
   ],
   module: {

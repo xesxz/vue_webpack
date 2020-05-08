@@ -1,15 +1,14 @@
 <template>
   <div id="app">
-    123
+    124
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
   name: 'app',
-  created () {
-    console.log(1234)
-  }
+
 }
 </script>
 
